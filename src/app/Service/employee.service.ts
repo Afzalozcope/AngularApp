@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { Employee } from '../Model/employee.model';
+import { Employee, EmployeeResponse } from '../Model/employee.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,8 +12,8 @@ export class EmployeeService {
 
   constructor(private http: HttpClient) { }
 
-  getEmployees(pageNumber: number, pageSize: number): Observable<any> {
-    return this.http.get<any>(
+  getEmployees(pageNumber: number, pageSize: number): Observable<EmployeeResponse> {
+    return this.http.get<EmployeeResponse>(
       `${this.apiUrl}?pageNumber=${pageNumber}&pageSize=${pageSize}`
     );
   }
