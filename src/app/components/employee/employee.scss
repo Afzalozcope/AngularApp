@@ -1,0 +1,115 @@
+.main-container{
+    background:#f4f7fb;
+    min-height:100vh;
+    padding:30px;
+}
+
+.custom-card{
+    background:#fff;
+    border:none;
+    border-radius:15px;
+    padding:25px;
+    box-shadow:0 4px 20px rgba(0,0,0,0.08);
+}
+
+.title{
+    color:#1e88e5;
+    font-size:16px;
+    font-weight:700;
+    margin-bottom:25px;
+    text-transform:uppercase;
+}
+
+.toolbar{
+    margin-bottom:20px;
+}
+
+.add-btn{
+    margin-bottom:15px;
+}
+
+.search-box{
+    width:300px;
+}
+
+.form-section{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-bottom:25px;
+    align-items:flex-start;
+}
+
+.field-group{
+    min-width:220px;
+    display:flex;
+    flex-direction:column;
+}
+
+.form-control{
+    border-radius:8px;
+    min-height:42px;
+}
+
+.form-control:focus{
+    border-color:#1e88e5;
+    box-shadow:0 0 0 .2rem rgba(30,136,229,.15);
+}
+
+.save-btn{
+    min-width:140px;
+    margin-top:0;
+}
+
+.custom-table{
+    background:white;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.custom-table thead{
+    background:#d8efff;
+}
+
+.custom-table thead th{
+    color:#333;
+    font-weight:600;
+    font-size:14px;
+    border:none;
+}
+
+.custom-table tbody td{
+    vertical-align:middle;
+    font-size:14px;
+}
+
+.custom-table tbody tr:hover{
+    background:#f8fbff;
+}
+
+.btn-info{
+    background:#8fd3ff;
+    border:none;
+    color:#fff;
+}
+
+.btn-info:hover{
+    background:#6bc4ff;
+}
+
+.text-danger{
+    font-size:12px;
+    margin-top:4px;
+}
+
+.pagination-section{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+}
+
+button:disabled{
+    cursor:not-allowed;
+    opacity:0.6;
+}

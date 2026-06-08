@@ -1,0 +1,174 @@
+<div class="main-container">
+
+  <div class="card custom-card">
+
+    <h4 class="title">
+      PARTICULARS OF APPLICATION SHAREHOLDER / DIRECTOR / MANAGER ETC
+    </h4>
+
+    <form #employeeForm="ngForm">
+
+      <div class="form-section">
+
+        <div class="field-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Name"
+            name="name"
+            [(ngModel)]="employee.name"
+            #name="ngModel"
+            required>
+
+          <small
+            class="text-danger"
+            *ngIf="name.invalid && (name.dirty || name.touched)">
+            Name is required
+          </small>
+        </div>
+
+        <div class="field-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Share Details"
+            name="shareDetails"
+            [(ngModel)]="employee.shareDetails"
+            #shareDetails="ngModel"
+            required>
+
+          <small
+            class="text-danger"
+            *ngIf="shareDetails.invalid && (shareDetails.dirty || shareDetails.touched)">
+            Share Details is required
+          </small>
+        </div>
+
+        <div class="field-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Address"
+            name="address"
+            [(ngModel)]="employee.address"
+            #address="ngModel"
+            required>
+
+          <small
+            class="text-danger"
+            *ngIf="address.invalid && (address.dirty || address.touched)">
+            Address is required
+          </small>
+        </div>
+
+        <div class="field-group">
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Passport Details"
+            name="passportDetails"
+            [(ngModel)]="employee.passportDetails"
+            #passportDetails="ngModel"
+            required>
+
+          <small
+            class="text-danger"
+            *ngIf="passportDetails.invalid && (passportDetails.dirty || passportDetails.touched)">
+            Passport Details is required
+          </small>
+        </div>
+
+      </div>
+
+      <div class="button-section">
+
+        <button
+          *ngIf="!isEditMode"
+          type="button"
+          class="btn btn-success"
+          [disabled]="employeeForm.invalid"
+          (click)="addEmployee(employeeForm)">
+          Save Contact
+        </button>
+
+        <button
+          *ngIf="isEditMode"
+          type="button"
+          class="btn btn-warning"
+          [disabled]="employeeForm.invalid"
+          (click)="updateEmployee(employeeForm)">
+          Update Contact
+        </button>
+
+        <button
+          *ngIf="isEditMode"
+          type="button"
+          class="btn btn-secondary ms-2"
+          (click)="cancelEdit(employeeForm)">
+          Cancel
+        </button>
+
+      </div>
+
+    </form>
+
+    <div class="table-responsive">
+
+      <table class="table custom-table">
+
+        <thead>
+          <tr>
+            <th>Role</th>
+            <th>Name</th>
+            <th>Share Details</th>
+            <th>Address</th>
+            <th>Passport Details</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr *ngFor="let emp of employees">
+
+            <td>Director</td>
+            <td>{{ emp.name }}</td>
+            <td>{{ emp.shareDetails }}</td>
+            <td>{{ emp.address }}</td>
+            <td>{{ emp.passportDetails }}</td>
+
+            <td>
+
+              <button
+                type="button"
+                class="btn btn-info btn-sm me-2"
+                (click)="editEmployee(emp)">
+                Edit
+              </button>
+
+              <button
+                type="button"
+                class="btn btn-danger btn-sm"
+                (click)="deleteEmployee(emp.id)">
+                Delete
+              </button>
+
+            </td>
+
+          </tr>
+
+          <tr *ngIf="employees.length === 0">
+            <td colspan="6" class="text-center">
+              No Records Found
+            </td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</div>
