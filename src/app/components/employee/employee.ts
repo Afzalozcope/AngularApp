@@ -2,8 +2,8 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit } from '@
 import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
 
-import { EmployeeService } from '../../Service/employee.service';
-import { Employee, EmployeeResponse } from '../../Model/employee.model';
+import { EmployeeService } from '../../service/employee.service';
+import { Employee, EmployeeResponse } from '../../model/employee.model';
 
 @Component({
   selector: 'app-employee',
@@ -21,7 +21,7 @@ export class EmployeeComponent implements OnInit {
   employees: Employee[] = [];
   employee: Employee = this.createEmptyEmployee();
   isEditMode = false;
-  private pageNumber = 1;
+  pageNumber = 1;
   private pageSize = 10;
 
   constructor(
